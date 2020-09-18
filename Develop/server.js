@@ -8,9 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
 
 
 app.listen(PORT, function() {
     console.log("app listening at http://localhost:" + PORT);
 });
 
+app.use(express.static("public"));

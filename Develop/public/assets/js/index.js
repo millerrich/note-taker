@@ -55,7 +55,9 @@ const handleNoteSave = function () {
     title: $noteTitle.val(),
     text: $noteText.val(),
   };
-
+  //added to test for input
+  console.log(newNote);
+  //-------------------
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -82,6 +84,7 @@ const handleNoteDelete = function (event) {
 // Sets the activeNote and displays it
 const handleNoteView = function () {
   activeNote = $(this).data();
+  console.log(activeNote);
   renderActiveNote();
 };
 
