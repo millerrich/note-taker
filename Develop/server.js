@@ -7,14 +7,10 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/public/index.html"));
-  });
+require("./routes/htmlRoutes")(app);
 
-app.get("/notes", function(req, res) {
-res.sendFile(path.join(__dirname, "/public/notes.html"));
-});
 
 app.listen(PORT, function() {
     console.log("app listening at http://localhost:" + PORT);
 });
+
